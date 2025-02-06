@@ -16,7 +16,7 @@ urp_top_cors <- function(data) {
     # see which variables cannot go into correlation calculations
     nonNumericNames <- c()
     for(i in 1:ncol(data)){
-      if(!(class(data[,i]) == "integer" | class(data[,i]) == "numeric") ){
+      if(class(data[,i]) %in% c("integer", "numeric")){
         nonNumericNames <- c(nonNumericNames,names(data)[i])
       }
     }
